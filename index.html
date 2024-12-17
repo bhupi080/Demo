@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: url('C:\Users\ritesh\OneDrive\Pictures\pngtree-welcome-2025-3d-text-and-fireworks-illuminate-the-sky-png-image_14077347.png') no-repeat center center fixed;
+            background: url('images/fireworks.png') no-repeat center center fixed; /* Use a relative path */
             background-size: cover;
             color: rgb(42, 14, 255);
             overflow: hidden;
@@ -30,9 +30,10 @@
             color: transparent;
         }
 
-        header p {
-            font-size: 4.0rem;
+        header h2 {
+            font-size: 3rem;
             margin: 10px 0;
+            color: #ffcc00;
         }
 
         #countdown {
@@ -42,43 +43,20 @@
             color: #ffcc00;
         }
 
-        .balloons {
+        .balloons img {
             position: fixed;
-            bottom: -100px;
+            width: 100px;
             animation: rise 5s infinite ease-in-out;
         }
 
-        .balloons img {
-            width: 100px;
-            margin: 0 10px;
-            animation: float 4s infinite ease-in-out;
-        }
-
         @keyframes rise {
-            0% {
-                bottom: -150px;
-            }
-            100% {
-                bottom: 100%;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(20px);
-            }
+            0% { bottom: -150px; }
+            100% { bottom: 100%; }
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .confetti {
@@ -90,12 +68,8 @@
         }
 
         @keyframes confettiFall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
         }
 
         footer {
@@ -103,22 +77,16 @@
             bottom: 10px;
             width: 100%;
             font-size: 1rem;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>  </h1>
         <h1>Happy New Year 2025</h1>
         <h2>Celebrate with joy and happiness!</h2>
         <div id="countdown">Countdown: Loading...</div>
     </header>
-
-    <!-- <div class="balloons">
-        <img src="C:\Users\ritesh\OneDrive\Pictures\png-clipart-balloon-colorful-balloons-bunch-large-six-assorted-color-balloons-illustration-photography-heart.png" alt="Balloon">
-        <img src="C:\Users\ritesh\OneDrive\Pictures\png-clipart-balloon-colorful-balloons-bunch-large-six-assorted-color-balloons-illustration-photography-heart.png"alt="Balloon">
-        <img src="C:\Users\ritesh\OneDrive\Pictures\png-clipart-balloon-colorful-balloons-bunch-large-six-assorted-color-balloons-illustration-photography-heart.png" alt="Balloon">
-    </div> -->
 
     <footer>
         <p>&copy; 2025 - Celebrate with Love and Cheer!</p>
@@ -139,7 +107,7 @@
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
             if (timeLeft > 0) {
-                countdownElement.textContent = Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s;
+                countdownElement.textContent = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
             } else {
                 countdownElement.textContent = "Happy New Year!";
                 startConfetti();
@@ -154,7 +122,8 @@
             const confetti = document.createElement('div');
             confetti.classList.add('confetti');
             confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.backgroundColor = hsl(${Math.random() * 360}, 100%, 50%);
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.top = '-10px';
             document.body.appendChild(confetti);
             setTimeout(() => confetti.remove(), 5000);
         }
