@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('images/fireworks.png') no-repeat center center fixed; /* Use a relative path */
+    background-size: cover;
+    color: rgb(42, 14, 255);
+    overflow: hidden;
+    text-align: center;
+}
+
+header {
+    margin-top: 200px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 8.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #f2fe13, #000000);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+header h2 {
+    font-size: 3rem;
+    margin: 10px 0;
+    color: #ffcc00;
+}
+
+#countdown {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #ffcc00;
+}
+
+.balloons img {
+    position: fixed;
+    width: 100px;
+    animation: rise 5s infinite ease-in-out;
+}
+
+@keyframes rise {
+    0% { bottom: -150px; }
+    100% { bottom: 100%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    animation: confettiFall 5s infinite ease-in-out;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-size: 1rem;
+    color: #fff;
+}
