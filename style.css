@@ -10,7 +10,7 @@ body {
 
 header {
     margin-top: 200px;
-    animation: fadeIn 2s ease-in-out
+    animation: fadeIn 2s ease-in-out;
 }
 
 header h1 {
